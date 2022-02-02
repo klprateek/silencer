@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Silencer</string>
+    <string name="turn_silencer_service_on_off">Turn Silencer Service on/off</string>
+    <string name="night_preference_text">Put the device on vibrate at night</string>
+    <string name="schedule_radio_button_text">Schedule</string>
+    <string name="manual_radio_button_text">Manual</string>
+    <string name="app_description_text">Explanation of the App</string>
+    <string name="time_picker_start_time_text">Start Time</string>
+    <string name="time_picker_end_time_text">End Time</string>
+    <string name="start_time_text">10:00 PM</string>
+    <string name="end_time_text">06:00 AM</string>
+    <string name="app_preferences">SILENCER_APP_PREFERENCES</string>
+    <string name="service_preference_key">SERVICE_PREFERENCE</string>
+    <string name="night_preference_key">NIGHT_PREFERENCE</string>
+    <string name="night_preference_radio_key">NIGHT_PREFERENCE_RADIO</string>
+    <string name="night_preference_start_time_key">NIGHT_PREFERENCE_START_TIME</string>
+    <string name="night_preference_end_time_key">NIGHT_PREFERENCE_END_TIME</string>
+    <string name="default_start_time">11:00 PM</string>
+    <string name="default_end_time">07:00 AM</string>
+    <string name="start_time_key">START_TIME</string>
+    <string name="end_time_key">END_TIME</string>
+    <string name="start_time_alarm">START_TIME_ALARM</string>
+    <string name="end_time_alarm">END_TIME_ALARM</string>
+    <string name="appwidget_text">On</string>
+    <string name="ACTION_WIDGET_BROADCAST">ACTION_WIDGET_BROADCAST</string>
+</resources>

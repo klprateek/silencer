@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainActivityViewModel"
+            type="com.example.silencer.MainActivityViewModel" />
+    </data>
+
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appDescriptionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp"
+        android:text="@string/app_description_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/serviceStatusSwitch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp"
+        android:text="@string/turn_silencer_service_on_off"
+        android:checked="@{mainActivityViewModel.serviceStatus}"
+        android:onCheckedChanged="@{ (v, checked) -> mainActivityViewModel.serviceStatusCheckedChange(checked)}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appDescriptionTextView" />
+
+    <Switch
+        android:id="@+id/nightPreferenceSwitch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp"
+        android:text="@string/night_preference_text"
+        android:enabled="@{mainActivityViewModel.nightEnabled}"
+        android:checked="@{mainActivityViewModel.nightStatus}"
+        android:onCheckedChanged="@{ (v, checked) -> mainActivityViewModel.nightStatusCheckedChange(checked)}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serviceStatusSwitch" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/timePickerGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="@{mainActivityViewModel.timeLayoutVisible}"
+        app:constraint_referenced_ids="startTimeLayout,endTimeLayout" />
+
+    <LinearLayout
+        android:id="@+id/startTimeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="@{mainActivityViewModel.timeLayoutEnabled}"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nightPreferenceSwitch">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/dateTextStyle"
+            android:enabled="@{mainActivityViewModel.timeLayoutEnabled}"
+            android:text="@string/time_picker_start_time_text" />
+
+        <TextView
+            android:id="@+id/textView13"
+            style="@style/dateTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{mainActivityViewModel.timeLayoutEnabled}"
+            android:text="@{mainActivityViewModel.startTimeText}"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/endTimeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="@{mainActivityViewModel.timeLayoutEnabled}"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTimeLayout">
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/dateTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{mainActivityViewModel.timeLayoutEnabled}"
+            android:text="@string/time_picker_end_time_text" />
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/dateTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{mainActivityViewModel.timeLayoutEnabled}"
+            android:text="@{mainActivityViewModel.endTimeText}"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>
