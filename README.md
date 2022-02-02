@@ -4,7 +4,7 @@ Context:
 
 Notifications and system sounds annoy you while you are using the phone. So you put the phone in vibration mode immediately.
 You also curse yourself when you miss a call or notification when the phone is away and is in silent mode because you forgot to turn it back to sound mode.
-Does it happen with you. It happens with me all the time!
+Does it happen with you? It happens with me all the time!
 
 What the app does:
 
